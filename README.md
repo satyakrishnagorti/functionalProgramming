@@ -1,0 +1,1 @@
+##Solved exercises of Functional Programming in Scala(Paul Chiusano) 
