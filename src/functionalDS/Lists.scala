@@ -5,7 +5,7 @@ import scala.annotation.tailrec
 /**
  * Created by krishna on 23/6/16.
  */
-object FunctionalDS {
+object Lists {
 
   @tailrec
   def drop[A](l: List[A], n: Int): List[A] = {
@@ -59,14 +59,14 @@ object FunctionalDS {
   def flatMap[A,B](as: List[A])(f: A => List[B]): List[B] = concat(map(as)(f))
 
   def addList(l: List[Int], m: List[Int]): List[Int] = (l, m) match {
-    case (Nil , _ ) => _
-    case (_ , Nil) => _
+    case (Nil , _ ) => Nil
+    case (_ , Nil) => Nil
     case (x::xs, y::ys) => (x+y)::addList(l,m)
   }
 
   def zipWith[A, B, C](l: List[A], m: List[B])(f:(A,B)=>C): List[C] = (l, m) match {
-    case (Nil, _) => _
-    case (_, Nil) => _
+    case (Nil, _) => Nil
+    case (_, Nil) => Nil
     case (x::xs, y::ys) => f(x,y)::zipWith(l,m)(f)
   }
 
