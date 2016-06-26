@@ -4,7 +4,7 @@ package errorHandling
  * Created by krishna on 25/6/16.
  */
 
-import scala.{Option => _} //hiding Scala's Option
+  import scala.{Option => _} //hiding Scala's Option
 
 sealed trait Option[+A]{
   def map[B](f: A => B): Option[B] = this match {
